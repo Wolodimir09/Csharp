@@ -26,5 +26,24 @@ namespace Csharp
             Console.WriteLine(info);
             Show();
         }
+
+        public int Max()
+        {
+            return arr.Max();
+        }
+
+        public int Min()
+        {
+            return arr.Min();
+        }
+        public float Avg()
+        {
+            return (float)arr.Sum() / arr.Length;
+        }
+
+        public bool Search(int valueToSearch)
+        {
+            return (System.Array.BinarySearch(arr, valueToSearch) >= 0) ? true : false;
+        }
     }
 }
