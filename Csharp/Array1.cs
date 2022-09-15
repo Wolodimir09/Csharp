@@ -45,5 +45,24 @@ namespace Csharp
         {
             return (System.Array.BinarySearch(arr, valueToSearch) >= 0) ? true : false;
         }
+
+        public void SortAsc()
+        {
+            System.Array.Sort(arr);
+        }
+
+        public void SortByParam(bool isAsc)
+        {
+            if (isAsc == true)
+                SortAsc();
+            else
+                SortDesc();
+        }
+
+        public void SortDesc()
+        {
+            SortAsc();
+            System.Array.Reverse(arr);
+        }
     }
 }
