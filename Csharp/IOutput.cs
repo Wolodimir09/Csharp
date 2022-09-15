@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Csharp
 {
-    internal interface IOutput
+    interface IOutput
     {
-
+        void Show();
+        void Show(string info);
     }
 }
