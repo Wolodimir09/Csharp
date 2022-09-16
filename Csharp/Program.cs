@@ -45,6 +45,18 @@ namespace Csharp
             arr.SortByParam(true);
             arr.Show("Масив після сортування за зростанням:");
             Console.WriteLine("\n////////////////////////////////////////");
+
+            // Завдання 4            
+
+            Console.WriteLine("\n------------- Завдання 4 ---------------");
+            Console.WriteLine("Кількіть елементів менших 15 = " + arr.Less(15));
+            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("Кількіть елементів ,більших 15 = " + arr.Greater(15));
+            Console.WriteLine("\n////////////////////////////////////////");
+
+            // Завдання 5
+
+
         }
     }
 }
