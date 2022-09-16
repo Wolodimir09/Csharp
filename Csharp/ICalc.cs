@@ -8,5 +8,7 @@ namespace Csharp
 {
     internal interface ICalc
     {
+        int Less(int valueToCompare);
+        int Greater(int valueToCompare);
     }
 }
