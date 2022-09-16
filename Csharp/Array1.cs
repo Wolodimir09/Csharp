@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Csharp
 {
-    internal class Array
+    internal class Array : IOutput, IMath, ISort, ICalc
     {
         private int[] arr;
         public Array(params int[] arr)
@@ -63,6 +63,24 @@ namespace Csharp
         {
             SortAsc();
             System.Array.Reverse(arr);
+        }
+
+        public int Less(int valueToCompare)
+        {
+            int count = 0;
+            foreach (var item in arr)
+                if (item < valueToCompare)
+                    count++;
+            return count;
+        }
+
+        public int Greater(int valueToCompare)
+        {
+            int count = 0;
+            foreach (var item in arr)
+                if (item > valueToCompare)
+                    count++;
+            return count;
         }
     }
 }
