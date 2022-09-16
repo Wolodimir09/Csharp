@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Array1.cs" />
     <Compile Include="ICalc.cs" />
+    <Compile Include="ICalc2.cs" />
     <Compile Include="IMath.cs" />
     <Compile Include="IOutput.cs" />
     <Compile Include="IOutput2.cs" />

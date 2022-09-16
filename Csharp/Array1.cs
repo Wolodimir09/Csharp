@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Csharp
 {
-    internal class Array : IOutput, IMath, ISort, ICalc, IOutput2
+    internal class Array : IOutput, IMath, ISort, ICalc, IOutput2, ICalc2
     {
         private int[] arr;
         public Array(params int[] arr)
@@ -95,6 +95,20 @@ namespace Csharp
             foreach (var item in arr)
                 if (item % 2 != 0)
                     Console.Write(item + " ");
+        }
+
+        public int CountDistinct()
+        {
+            return arr.Distinct().Count();
+        }
+
+        public int EqualToValue(int valueToCompare)
+        {
+            int count = 0;
+            foreach (var item in arr)
+                if (item == valueToCompare)
+                    count++;
+            return count;
         }
     }
 }
