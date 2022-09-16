@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Csharp
 {
-    internal class Array : IOutput, IMath, ISort, ICalc
+    internal class Array : IOutput, IMath, ISort, ICalc, IOutput2
     {
         private int[] arr;
         public Array(params int[] arr)
@@ -81,6 +81,20 @@ namespace Csharp
                 if (item > valueToCompare)
                     count++;
             return count;
+        }
+
+        public void ShowEven()
+        {
+            foreach (var item in arr)
+                if (item % 2 == 0)
+                    Console.Write(item + " ");
+        }
+
+        public void ShowOdd()
+        {
+            foreach (var item in arr)
+                if (item % 2 != 0)
+                    Console.Write(item + " ");
         }
     }
 }
