@@ -56,6 +56,16 @@ namespace Csharp
 
             // Завдання 5
 
+            Console.WriteLine("\n------------- Завдання 5 ---------------");            
+            Console.WriteLine("Парні елементи масиву:");
+            arr.ShowEven();
+            Console.WriteLine("\n---------------------------------------");
+            Console.WriteLine("Непарні елементи масиву:");
+            arr.ShowOdd();            
+            Console.WriteLine("\n////////////////////////////////////////");
+
+            // Завдання 6
+
 
         }
     }
