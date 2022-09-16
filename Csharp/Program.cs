@@ -65,8 +65,11 @@ namespace Csharp
             Console.WriteLine("\n////////////////////////////////////////");
 
             // Завдання 6
-
-
+            Console.WriteLine("\n------------- Завдання 6 ---------------");
+            Console.WriteLine("Кількість унікальних значень: " + arr.CountDistinct());
+            Console.WriteLine("---------------------------------------");
+            Console.WriteLine("Кількість значень рівних 5 = " + arr.EqualToValue(5));
+            Console.WriteLine("////////////////////////////////////////");
         }
     }
 }
