@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace Csharp
 {
-    internal class MyTypeException
+    internal class MyTypeException : ArgumentException
     {
+        public override string Message => " Тип данних не відповідає потребам методу";
+        public MyTypeException() { }
     }
 }
