@@ -10,6 +10,10 @@ namespace Csharp
     {
         static void Main(string[] args)
         {
+            Console.InputEncoding = Encoding.Unicode;
+            Console.OutputEncoding = Encoding.Unicode;
+            
+            
             // Оголошуються та ініціалізуються тестові зразки масивів 
             var arrayInt = new MyGenericArray<int>(12, 45, 98, 23, 41, 9, 4, 7);
             var arrayByte = new MyGenericArray<byte>(12, 45, 8, 23, 41, 10, 1, 7);
