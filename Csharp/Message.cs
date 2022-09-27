@@ -8,6 +8,9 @@ namespace Csharp
 {
     internal class Message
     {
-
+        public void MessageString(string messange)
+        {
+            Console.WriteLine(messange);
+        }
     }
 }
