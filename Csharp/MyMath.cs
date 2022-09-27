@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace Csharp
 {
-    internal class Program
+    internal class MyMath
     {
-        static void Main(string[] args)
-        {
-
-        }
     }
 }
