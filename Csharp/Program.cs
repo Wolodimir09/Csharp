@@ -77,6 +77,7 @@ namespace Csharp
                     }
                     item();
                 }
+               
                 Console.WriteLine("-------------------------------------------");
                 Console.Write("Введіть висоту трикутника: ");
                 double height = double.Parse(Console.ReadLine());
@@ -84,6 +85,7 @@ namespace Csharp
                 double side = double.Parse(Console.ReadLine());
                 Func<double,double,double> funcTriangle = (value1 ,value2) => (0.5 * value1 * value2);
                 Console.WriteLine("Площа трикутника: "+funcTriangle(side, height));
+                
                 Console.WriteLine("-------------------------------------------");
                 Console.Write("Введіть висоту прямокутника: ");
                 double sideA = double.Parse(Console.ReadLine());
