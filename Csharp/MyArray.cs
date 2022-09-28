@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Csharp
 {
-    
+    public delegate int[] MyArrayDel(int[] arr);
     internal static class MyArray
     {
         
@@ -38,16 +38,24 @@ namespace Csharp
         // Метод для отримання усіх чисел Фібоначчі в масиві
         public static int[] FibonacciNumbers(int[] arr)
         {
-            List<int> list = new List<int>() { 1,2};
+            List<int> list = new List<int>() { 0,1};
             List<int> fibonacciNumbers = new List<int>(); 
             for (int i = 0; i < arr.Length; i++)
             {
                 for (int j = 0; ; j++)
                 {
-
+                    if (arr[i] > list[list.Count-1])
+                    {
+                        list.Add(list[list.Count - 3] + list[list.Count - 2]);
+                    }
+                    else if(arr[i] == list[list.Count-1])
+                    {
+                        fibonacciNumbers.Add(arr[i]);
+                    }                    
+                    break;
                 }
             }
-
+            return fibonacciNumbers.ToArray();
         }
     }
 }
