@@ -46,13 +46,18 @@ namespace Csharp
                 {
                     if (arr[i] > list[list.Count-1])
                     {
-                        list.Add(list[list.Count - 3] + list[list.Count - 2]);
+                        list.Add(list[list.Count - 2] + list[list.Count - 1]);
                     }
-                    else if(arr[i] == list[list.Count-1])
+                    else if(arr[i] == list.FirstOrDefault(a => a == arr[i]))
                     {
                         fibonacciNumbers.Add(arr[i]);
-                    }                    
-                    break;
+                        break;
+                    }
+                    else
+                    {                        
+                        break;
+                    }
+                    
                 }
             }
             return fibonacciNumbers.ToArray();

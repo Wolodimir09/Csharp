@@ -14,9 +14,7 @@ namespace Csharp
             Console.InputEncoding = Encoding.Unicode;
             
             Problem1();
-            Problem2();
-
-            
+            Problem2();            
         }        
 
         // Рішення задачі 1
