@@ -114,7 +114,8 @@ namespace Csharp{
             return String.Format("Номер карти: {0:D16}", CardNumber) +
                    "\n\t\tВласник: " + NameOfTheOwner+
                    "\n\t\tКредитний ліміт: "+CreditLimit+
-                   "\n\t\tБаланс: "+Balance;
+                   "\n\t\tБаланс: "+Balance+
+                   "\n\t\tТермін дії карти: "+Validity.ToLongDateString();
         } 
     }
 }
