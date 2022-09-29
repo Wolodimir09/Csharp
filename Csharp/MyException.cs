@@ -8,10 +8,11 @@ namespace Csharp
 {
     internal class MyExceptionCreditCart:ApplicationException
     {
-        public DateTime TimeExceptionBancrot { get; private set; }
-        public MyExceptionCreditCart() : base("Помилка банківської карти!!!")
+        public DateTime time { get; private set; }        
+         
+        public MyExceptionCreditCart(string message) : base(message)
         {
-            TimeExceptionBancrot = DateTime.Now;
-        }
+            time = DateTime.Now;            
+        }        
     }
 }
