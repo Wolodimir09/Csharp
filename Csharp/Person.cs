@@ -22,7 +22,7 @@ namespace Csharp
             Card = new CreditCard(firstName,lastName,middleName);
         }
 
-        public string Message(string message)
+        public string Message(string message) 
         {
             Console.WriteLine("---------------------------------------------------------");
             return $"\t{FirstName}! Вам нове повідомлення: \n\t{message}\n\t\t{DateTime.Now}\n";            

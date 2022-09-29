@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace Csharp
 {
-    internal class Bank
+    internal class Bank // Диспетчер
     {
         public event mesageDel mesage;
         public string Check(string infoOperation)
         {
             if (mesage!=null)
             {
-                return mesage(infoOperation).ToString();
+                return mesage(infoOperation);
             }
             return " ";
         }

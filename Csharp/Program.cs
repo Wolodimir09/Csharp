@@ -54,7 +54,7 @@ namespace Csharp
             Console.ReadKey(true);
         }
 
-        private static void SwitchMenu(ConsoleKey key)
+        private static void SwitchMenu(ConsoleKey key) // Реалізація менюшки
         {
             
             switch (key)
@@ -72,7 +72,8 @@ namespace Csharp
                         double money = double.Parse(Console.ReadLine());
                         Console.Write($"\tВведіть ваш пін-код: ");
                         int pin = int.Parse(Console.ReadLine());                        
-                        Console.WriteLine(bank.Check(petro.Card.withdrawalOfFunds(pin, money)));
+                        Console.WriteLine(bank.Check(petro.Card.StartCreditMoney(money)+
+                                                     petro.Card.withdrawalOfFunds(pin, money)));
                 } break;
                 case ConsoleKey.D3:
                 {

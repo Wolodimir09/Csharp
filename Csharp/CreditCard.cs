@@ -6,23 +6,8 @@ using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Csharp
-{
-            /*Завдання 3
-        Створіть клас «Кредитна картка». Клас повинен містити:
-        ■ Номер картки;            
-        ■ ПІБ власника;
-        ■ Термін дії карти;
-        ■ PIN;
-        ■ Кредитний ліміт;
-        ■ Сума грошей.
-        Створіть потрібний набір способів класу. Реалізуйте
-        події для наступних ситуацій:
-        ■ Поповнення рахунку;
-        ■ Витрата коштів з рахунку;
-        ■ Старт використання кредитних коштів;
-        ■ Досягнення ліміту заданої суми грошей;
-        ■ Зміна PIN.*/
+namespace Csharp{
+            
     internal class CreditCard
     {
         public static long CardNumber { get; private set; } = 0;
@@ -44,7 +29,7 @@ namespace Csharp
             Balance = CreditLimit;
         }
 
-        public string Refill(int pinCode, double money) //Поповнення крти
+        public string Refill(int pinCode, double money) //Поповнення кaрти
         {
             NotCorrectMoney(money);
             if (pinCode==_pinCode)
@@ -57,7 +42,7 @@ namespace Csharp
             }
             return $"Ваш рахунок успішно поповнено! \n\t\t{Show()}";
         }
-        public string withdrawalOfFunds(int pinCode, double money) //Поповнення карти
+        public string withdrawalOfFunds(int pinCode, double money) //Зняття коштів з карти
         {
             NotCorrectMoney(money);
             if (pinCode == _pinCode && money <= Balance)
@@ -72,7 +57,7 @@ namespace Csharp
             {
                 PinCodError();
             }
-            return $"\tУспішне зняття коштів! \n\t\t{Show()}";
+            return $"\n\t\tУспішне зняття коштів! \n\t\t{Show()}";
         }
         private void NotCorrectMoney(double money)
         {
@@ -94,7 +79,7 @@ namespace Csharp
                 throw new MyExceptionCreditCart("\tНе вірний пiн-код!!!");
             }
         }
-        public string AlterationPinCod()
+        public string AlterationPinCod() // Зміна пін-коду
         {
             Console.Write($"\tВведіть ваш поточний пін-код: ");            
             if (_pinCode==int.Parse(Console.ReadLine()))
@@ -108,8 +93,7 @@ namespace Csharp
                 else
                 {
                     throw new MyExceptionCreditCart("Не корректно заданий пін-код!");
-                }
-                
+                }                
             }
             else
             {
@@ -117,18 +101,20 @@ namespace Csharp
             }
             return $"Ваш пін-код успішно змінено!";
         }
-
+        public string StartCreditMoney(double money) // Відстеження початку використання кредитних коштів
+        {
+            if (Balance>=CreditLimit && (Balance - money)<CreditLimit)
+            {
+               return $"\n\t\tУвага! Старт використання кредитних коштів";
+            }
+            return " ";
+        }
         private string Show()
         {
             return String.Format("Номер карти: {0:D16}", CardNumber) +
                    "\n\t\tВласник: " + NameOfTheOwner+
                    "\n\t\tКредитний ліміт: "+CreditLimit+
                    "\n\t\tБаланс: "+Balance;
-        }          
-
-
-
-        
-
+        } 
     }
 }
