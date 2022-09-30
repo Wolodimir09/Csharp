@@ -29,12 +29,24 @@ namespace Csharp
                 Problem3(arrayInt);
                 Problem4(arrayInt);
                 Problem5(arrayInt);
+                Console.WriteLine("\n-------------------- Задача 6 -----------------------");
+                Console.WriteLine("Введіть текст: ");
+                string text = Console.ReadLine();
+                Console.WriteLine("Введіть слово для пошуку в тексті: ");
+                string word = Console.ReadLine();
+                Problem6(text,word);
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
             
+        }
+
+        private static void Problem6(string text, string word)
+        {
+            Func<string, string, bool> pred = (value1, value2) => value1.Split(' ', ',', '.', '!', '?').Where(e=>e==value2).Any();
+            Console.WriteLine("Результата пошуку заданного слова: "+pred(text,word));
         }
 
         private static void Problem5(int[] arrayInt)
