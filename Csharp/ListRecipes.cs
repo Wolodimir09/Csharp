@@ -8,5 +8,8 @@ namespace Csharp
 {
     internal class ListRecipes
     {
+        List<Recipe> recipes = new List<Recipe>();
+
+
     }
 }
